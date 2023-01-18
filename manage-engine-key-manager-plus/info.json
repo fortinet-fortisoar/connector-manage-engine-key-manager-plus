@@ -1,7 +1,7 @@
 {
   "name": "manage-engine-key-manager-plus",
   "label": "ManageEngine Key Manager Plus",
-  "description": "Manage Engine Key Manager Plus connector provides key management solution that helps you consolidate, control, manage, monitor, and audit the entire life cycle of SSH (Secure Shell) keys and SSL (Secure Sockets Layer) certificates.",
+  "description": "ManageEngine Key Manager Plus connector provides key management solution that helps you consolidate, control, manage, monitor, and audit the entire life cycle of SSH (Secure Shell) keys and SSL (Secure Sockets Layer) certificates.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
@@ -19,9 +19,9 @@
         "visible": true,
         "type": "text",
         "name": "server_url",
-        "placeholder": "http://<hostname>:<port>",
-        "description": "URL of the Manage Engine Key Manager Plus server to which you will connect and perform the automated operations.",
-        "tooltip": "URL of the Manage Engine Key Manager Plus server to which you will connect and perform the automated operations."
+        "placeholder": "https://<hostname>:<port>",
+        "description": "URL of the ManageEngine Key Manager Plus server to which you will connect and perform the automated operations.",
+        "tooltip": "URL of the ManageEngine Key Manager Plus server to which you will connect and perform the automated operations."
       },
       {
         "title": "API Key",
@@ -30,8 +30,8 @@
         "visible": true,
         "type": "password",
         "name": "token",
-        "description": "API key that is configured for your account to access the Manage Engine Key Manager Plus endpoint.",
-        "tooltip": "API key that is configured for your account to access the Manage Engine Key Manager Plus endpoint."
+        "description": "API key that is configured for your account to access the ManageEngine Key Manager Plus endpoint.",
+        "tooltip": "API key that is configured for your account to access the ManageEngine Key Manager Plus endpoint."
       },
       {
         "title": "Verify SSL",
@@ -50,7 +50,7 @@
     {
       "operation": "get_ssh_keys",
       "title": "Get SSH Keys",
-      "description": "Retrieves all SSH Keys across your network and import them into Key Manager Plus repository.",
+      "description": "Retrieves all SSH Keys across your network and import them into ManageEngine Key Manager Plus repository.",
       "category": "investigation",
       "annotation": "get_ssh_keys",
       "output_schema": {
@@ -76,7 +76,7 @@
     {
       "operation": "get_ssl_certificates",
       "title": "Get SSL Certificates",
-      "description": "Retrieves all SSL certificates across your network and import them into Key Manager Plus repository.",
+      "description": "Retrieves all SSL certificates across your network and import them into ManageEngine Key Manager Plus repository.",
       "category": "investigation",
       "annotation": "get_ssl_certificates",
       "output_schema": {
@@ -98,8 +98,8 @@
           ],
           "name": "search_type",
           "value": "Hostname/IP Address",
-          "tooltip": "Select one of the method to get SSL certificates across your network and import them into Key Manager Plus repository.",
-          "description": "Select one of the method to get SSL certificates across your network and import them into Key Manager Plus repository. You can choose between Hostname/IP Address or IP Address Range.",
+          "tooltip": "Select one of the method to get SSL certificates across your network and import them into ManageEngine Key Manager Plus repository. By default, this option is set as Hostname/IP Address.",
+          "description": "Select one of the method to get SSL certificates across your network and import them into ManageEngine Key Manager Plus repository. You can choose between Hostname/IP Address or IP Address Range. By default, this option is set as Hostname/IP Address.",
           "onchange": {
             "Hostname/IP Address": [
               {
@@ -162,7 +162,7 @@
     {
       "operation": "update_credentials",
       "title": "Update Credentials",
-      "description": "Updates credentials of a discovered resource in Key Manager Plus based on the input parameters you have specified.",
+      "description": "Updates credentials of a discovered resource in ManageEngine Key Manager Plus based on the input parameters specified.",
       "category": "investigation",
       "annotation": "update_credentials",
       "output_schema": {
