@@ -3,7 +3,6 @@
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
-import json
 
 import requests
 from connectors.core.connector import get_logger, ConnectorError
