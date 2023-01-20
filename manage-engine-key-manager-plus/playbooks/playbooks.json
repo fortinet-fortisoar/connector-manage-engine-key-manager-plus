@@ -1,0 +1,263 @@
+{
+  "type": "workflow_collections",
+  "data": [
+    {
+      "uuid": "71f87a38-3dc9-45f3-85d9-11fe4563b755",
+      "@type": "WorkflowCollection",
+      "name": "Sample - ManageEngine Key Manager Plus - 1.0.0",
+      "description": "Manage Engine Key Manager Plus connector provides key management solution that helps you consolidate, control, manage, monitor, and audit the entire life cycle of SSH (Secure Shell) keys and SSL (Secure Sockets Layer) certificates.",
+      "visible": true,
+      "image": null,
+      "recordTags": [
+        "ManageEngine",
+        "manage-engine-key-manager-plus"
+      ],
+      "workflows": [
+        {
+          "@type": "Workflow",
+          "uuid": "31e497ea-5608-4218-aef7-e93c27ea53e5",
+          "collection": "/api/3/workflow_collections/71f87a38-3dc9-45f3-85d9-11fe4563b755",
+          "triggerLimit": null,
+          "description": "Retrieves all SSH Keys across your network and import them into Key Manager Plus repository.",
+          "name": "Get SSH Keys",
+          "tag": "#ManageEngine Key Manager Plus",
+          "recordTags": [
+            "ManageEngine",
+            "manage-engine-key-manager-plus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/4e9cb36d-9680-4823-93fd-5bb3de55a59e",
+          "steps": [
+            {
+              "uuid": "4e9cb36d-9680-4823-93fd-5bb3de55a59e",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "99506193-a8ce-43f6-8b32-a9a7b7bf7c88",
+                "title": "ManageEngine Key Manager Plus: Get SSH Keys",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4791f120-296f-4378-991f-97b3aaddf877",
+              "@type": "WorkflowStep",
+              "name": "Get SSH Keys",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ManageEngine Key Manager Plus",
+                "config": "''",
+                "params": [],
+                "version": "1.0.0",
+                "connector": "manage-engine-key-manager-plus",
+                "operation": "get_ssh_keys",
+                "operationTitle": "Get SSH Keys",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "7a4a8a1b-0867-4fbc-ba56-ae4f245f108b",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get SSH Keys",
+              "sourceStep": "/api/3/workflow_steps/4e9cb36d-9680-4823-93fd-5bb3de55a59e",
+              "targetStep": "/api/3/workflow_steps/4791f120-296f-4378-991f-97b3aaddf877"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "5c267dc5-b131-4c88-821d-81c193f0e805",
+          "collection": "/api/3/workflow_collections/71f87a38-3dc9-45f3-85d9-11fe4563b755",
+          "triggerLimit": null,
+          "description": "Retrieves all SSL certificates across your network and import them into Key Manager Plus repository.",
+          "name": "Get SSL Certificates",
+          "tag": "#ManageEngine Key Manager Plus",
+          "recordTags": [
+            "ManageEngine",
+            "manage-engine-key-manager-plus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/583d2720-6ba6-4343-80cc-e2119661eb91",
+          "steps": [
+            {
+              "uuid": "583d2720-6ba6-4343-80cc-e2119661eb91",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "31ecac04-766a-4382-9d7f-83815e359425",
+                "title": "ManageEngine Key Manager Plus: Get SSL Certificates",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "0becba9d-c6cc-4ea0-a247-8f32ed14066b",
+              "@type": "WorkflowStep",
+              "name": "Get SSL Certificates",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ManageEngine Key Manager Plus",
+                "config": "''",
+                "params": {
+                  "search_type": "Hostname/IP Address"
+                },
+                "version": "1.0.0",
+                "connector": "manage-engine-key-manager-plus",
+                "operation": "get_ssl_certificates",
+                "operationTitle": "Get SSL Certificates",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "5452fa4c-1535-4e9e-bb8b-425255f50bab",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Get SSL Certificates",
+              "sourceStep": "/api/3/workflow_steps/583d2720-6ba6-4343-80cc-e2119661eb91",
+              "targetStep": "/api/3/workflow_steps/0becba9d-c6cc-4ea0-a247-8f32ed14066b"
+            }
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "uuid": "98a61d14-d730-487f-99bb-35db1ed6b58d",
+          "collection": "/api/3/workflow_collections/71f87a38-3dc9-45f3-85d9-11fe4563b755",
+          "triggerLimit": null,
+          "description": "Updates credentials of a discovered resource in Key Manager Plus based on the input parameters you have specified.",
+          "name": "Update Credentials",
+          "tag": "#ManageEngine Key Manager Plus",
+          "recordTags": [
+            "ManageEngine",
+            "manage-engine-key-manager-plus"
+          ],
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "parameters": [],
+          "synchronous": false,
+          "triggerStep": "/api/3/workflow_steps/7c47da32-041f-4c19-9fcd-513f82d4c888",
+          "steps": [
+            {
+              "uuid": "7c47da32-041f-4c19-9fcd-513f82d4c888",
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "route": "daa763e9-c58e-4ccf-9c53-caf617bf7810",
+                "title": "ManageEngine Key Manager Plus: Update Credentials",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "records": "{{vars.input.records[0]}}"
+                  }
+                },
+                "singleRecordExecution": false,
+                "noRecordExecution": true,
+                "executeButtonText": "Execute"
+              },
+              "left": "20",
+              "top": "20",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a"
+            },
+            {
+              "uuid": "4318d546-bac8-4371-b471-3a2515fb0dbf",
+              "@type": "WorkflowStep",
+              "name": "Update Credentials",
+              "description": null,
+              "status": null,
+              "arguments": {
+                "name": "ManageEngine Key Manager Plus",
+                "config": "''",
+                "params": {
+                  "is_admin": false
+                },
+                "version": "1.0.0",
+                "connector": "manage-engine-key-manager-plus",
+                "operation": "update_credentials",
+                "operationTitle": "Update Credentials",
+                "step_variables": {
+                  "output_data": "{{vars.result}}"
+                }
+              },
+              "left": "188",
+              "top": "120",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "uuid": "ceb4a5ac-e466-4a14-b851-700c0b3da974",
+              "label": null,
+              "isExecuted": false,
+              "name": "Start-> Update Credentials",
+              "sourceStep": "/api/3/workflow_steps/7c47da32-041f-4c19-9fcd-513f82d4c888",
+              "targetStep": "/api/3/workflow_steps/4318d546-bac8-4371-b471-3a2515fb0dbf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
