@@ -9,7 +9,7 @@
   "category": "Identity and Access Management",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/manageengine-key-manager-plus/496/manageengine-key-manager-plus-v1-0-0",
   "configuration": {
     "fields": [
       {
