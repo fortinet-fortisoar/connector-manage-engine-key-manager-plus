@@ -82,6 +82,19 @@ def get_ssl_certificates(config, params):
     else:
         start_ip = params.get('start_ip')
         end_ip = params.get('end_ip')
+        if isinstance(start_ip, str) and isinstance(end_ip, str):
+            start_ip_nos = start_ip.split(".")
+            end_ip_nos = end_ip.split(".")
+        else:
+            raise ConnectorError('Wrong IP input')
+        if len(start_ip_nos) == 4 and len(end_ip_nos) == 4:
+            for i in range(len(start_ip_nos)):
+                if int(start_ip_nos[i]) > 255 or int(end_ip_nos[i]) > 255:
+                    raise ConnectorError('Wrong IP input')
+                if int(start_ip_nos[i]) > int(end_ip_nos[i]):
+                    raise ConnectorError('Start IP should be less than End IP')
+        else:
+            raise ConnectorError('Wrong IP input')
         input_data = str({"operation": {"Details": {"StartIpAddress": start_ip, "EndIpAddress": end_ip,
                                                     "TIMEOUT": time_out, "PORT": port}}}).replace(" ", "")
         payload = 'INPUT_DATA={0}'.format(input_data)
