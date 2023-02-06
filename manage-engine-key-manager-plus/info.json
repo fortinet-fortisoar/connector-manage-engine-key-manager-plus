@@ -1,7 +1,7 @@
 {
   "name": "manage-engine-key-manager-plus",
   "label": "ManageEngine Key Manager Plus",
-  "description": "ManageEngine Key Manager Plus connector provides key management solution that helps you consolidate, control, manage, monitor, and audit the entire life cycle of SSH (Secure Shell) keys and SSL (Secure Sockets Layer) certificates.",
+  "description": "ManageEngine Key Manager Plus connector provides a 'key management' solution that helps you consolidate, control, manage, monitor, and audit the entire life cycle of SSH (Secure Shell) keys and SSL (Secure Sockets Layer) certificates.",
   "publisher": "Fortinet",
   "cs_approved": true,
   "cs_compatible": true,
@@ -20,8 +20,8 @@
         "type": "text",
         "name": "server_url",
         "placeholder": "https://<hostname>:<port>",
-        "description": "URL of the ManageEngine Key Manager Plus server to which you will connect and perform the automated operations.",
-        "tooltip": "URL of the ManageEngine Key Manager Plus server to which you will connect and perform the automated operations."
+        "description": "Specify the URL of the ManageEngine Key Manager Plus server to which you will connect and perform the automated operations.",
+        "tooltip": "Specify the URL of the ManageEngine Key Manager Plus server to which you will connect and perform the automated operations."
       },
       {
         "title": "API Key",
@@ -30,8 +30,8 @@
         "visible": true,
         "type": "password",
         "name": "token",
-        "description": "API key that is configured for your account to access the ManageEngine Key Manager Plus endpoint.",
-        "tooltip": "API key that is configured for your account to access the ManageEngine Key Manager Plus endpoint."
+        "description": "Specify the API key that is configured for your account to access the ManageEngine Key Manager Plus endpoint.",
+        "tooltip": "Specify the API key that is configured for your account to access the ManageEngine Key Manager Plus endpoint."
       },
       {
         "title": "Verify SSL",
@@ -50,7 +50,7 @@
     {
       "operation": "get_ssh_keys",
       "title": "Get SSH Keys",
-      "description": "Retrieves detailed list of all the discovered SSH keys from ManageEngine Key Manager Plus.",
+      "description": "Retrieves a detailed list of all the discovered SSH keys from ManageEngine Key Manager Plus.",
       "category": "investigation",
       "annotation": "get_ssh_keys",
       "output_schema": {
@@ -76,7 +76,7 @@
     {
       "operation": "get_ssl_certificates",
       "title": "Get SSL Certificates",
-      "description": "Retrieves SSL certificates based on the input parameters specified and import them into ManageEngine Key Manager Plus repository.",
+      "description": "Retrieves SSL certificates and imports them into the ManageEngine Key Manager Plus repository based on the hostname/IP address or IP address range, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "get_ssl_certificates",
       "output_schema": {
@@ -98,8 +98,8 @@
           ],
           "name": "search_type",
           "value": "Hostname/IP Address",
-          "tooltip": "Select one of the method to retrieve SSL certificates and import them into ManageEngine Key Manager Plus repository.",
-          "description": "Select one of the method to retrieve SSL certificates and import them into ManageEngine Key Manager Plus repository. You can choose between Hostname/IP Address or IP Address Range. By default, this option is set as Hostname/IP Address.",
+          "tooltip": "Select the method that you want to use to retrieve SSL certificates and import them into the ManageEngine Key Manager Plus repository.",
+          "description": "Select the method that you want to use to retrieve SSL certificates and import them into the ManageEngine Key Manager Plus repository. You can choose between Hostname/IP Address (Default) or IP Address Range.",
           "onchange": {
             "Hostname/IP Address": [
               {
@@ -109,8 +109,8 @@
                 "visible": true,
                 "type": "text",
                 "name": "host",
-                "description": "The Hostname or IP Address of the host to scan for SSL certificates.",
-                "tooltip": "The Hostname or IP Address of the host to scan for SSL certificates."
+                "description": "Specify the Hostname or IP Address of the host to be scanned for SSL certificates.",
+                "tooltip": "Specify the Hostname or IP Address of the host to be scanned for SSL certificates."
               }
             ],
             "IP Address Range": [
@@ -121,8 +121,8 @@
                 "visible": true,
                 "type": "text",
                 "name": "start_ip",
-                "tooltip": "The Starting IP address from which SSL certificates will be discovered from.",
-                "description": "The Starting IP address from which SSL certificates will be discovered from."
+                "tooltip": "Specify the starting IP address of the host from which SSL certificates are to be scanned.",
+                "description": "Specify the starting IP address of the host from which SSL certificates are to be scanned."
               },
               {
                 "title": "End IP Address",
@@ -131,8 +131,8 @@
                 "visible": true,
                 "type": "text",
                 "name": "end_ip",
-                "tooltip": "The Ending IP address upto which SSL certificates will be discovered from.",
-                "description": "The Ending IP address upto which SSL certificates will be discovered from."
+                "tooltip": "Specify the ending IP address of the host till which SSL certificates are to be scanned.",
+                "description": "Specify the ending IP address of the host till which SSL certificates are to be scanned."
               }
             ]
           }
@@ -144,8 +144,8 @@
           "visible": true,
           "type": "integer",
           "name": "time_out",
-          "tooltip": "Time interval in seconds per resource after which the search automatically ceases.",
-          "description": "Time interval in seconds per resource after which the search automatically ceases."
+          "tooltip": "Specify the time interval in seconds per resource after which the search automatically ceases.",
+          "description": "Specify the time interval in seconds per resource after which the search automatically ceases."
         },
         {
           "title": "Port Number",
@@ -154,15 +154,15 @@
           "visible": true,
           "type": "integer",
           "name": "port",
-          "tooltip": "The Port Number to scan for SSL certificates.",
-          "description": "The Port Number to scan for SSL certificates."
+          "tooltip": "Specify the Port Number to be used for scanning SSL certificates.",
+          "description": "Specify the Port Number to be used for scanning SSL certificates."
         }
       ]
     },
     {
       "operation": "update_credentials",
       "title": "Update Credentials",
-      "description": "Updates credentials of a discovered resource in ManageEngine Key Manager Plus based on the input parameters specified.",
+      "description": "Updates credentials of a discovered resource in ManageEngine Key Manager Plus based on the resource name, username, password, and other input parameters you have specified.",
       "category": "investigation",
       "annotation": "update_credentials",
       "output_schema": {
@@ -182,8 +182,8 @@
           "visible": true,
           "type": "text",
           "name": "resource_name",
-          "tooltip": "Hostname or IP Address of the discovered resource for which you want to apply credentials.",
-          "description": "Hostname or IP Address of the discovered resource for which you want to apply credentials."
+          "tooltip": "Specify the Hostname or IP Address of the discovered resource for which you want to apply credentials. ",
+          "description": "Specify the Hostname or IP Address of the discovered resource for which you want to apply credentials. "
         },
         {
           "title": "User Name",
@@ -192,8 +192,8 @@
           "visible": true,
           "type": "text",
           "name": "user_name",
-          "tooltip": "User Name of any user account in the specified resource to get key management privileges for that particular account. Credentials of root account gives key management privileges for all account on resource.",
-          "description": "User Name of any user account in the specified resource to get key management privileges for that particular account. Credentials of root account gives key management privileges for all account on resource."
+          "tooltip": "Specify the username of any user account in the specified resource to gain key management privileges for that particular account. The credentials of the 'root' account gives key management privileges for all accounts on the resource.",
+          "description": "Specify the username of any user account in the specified resource to gain key management privileges for that particular account. The credentials of the 'root' account gives key management privileges for all accounts on the resource."
         },
         {
           "title": "Password",
@@ -202,8 +202,8 @@
           "visible": true,
           "type": "password",
           "name": "password",
-          "tooltip": "Password of the specified user account.",
-          "description": "Password of the specified user account."
+          "tooltip": "Specify the password of the user account specified in the User Name field.",
+          "description": "Specify the password of the user account specified in the User Name field."
         },
         {
         "title": "Is Admin",
@@ -213,8 +213,8 @@
         "type": "checkbox",
         "name": "is_admin",
         "value": false,
-        "description": "Specifies whether the user account is a Root or Administrator account. By default, this option is set as False.",
-        "tooltip": "Specifies whether the user account is a Root or Administrator account. By default, this option is set as False."
+        "description": "Select this option, i.e., set it to 'True'. if the user account specified in the User Name field is a 'Root' or 'Administrator' account. By default, this option cleared, i.e., it is set to 'False'.",
+        "tooltip": "Select this option, i.e., set it to 'True'. if the user account specified in the User Name field is a 'Root' or 'Administrator' account. By default, this option cleared, i.e., it is set to 'False'."
         }
       ]
     }
